@@ -89,6 +89,8 @@ class FeedbackCollector:
         prompts: Union[str, List[str]],
         formatted_prompts: List[str],
         refs: Union[str, List[str]],
+        *args,
+        **kwargs,
     ):
         # generate response & get feedback
         st_time = time.time()

@@ -1,6 +1,9 @@
 python verifree.py \
+    --use-wb \
+    --wb-project verifree \
+    --wb-run-name verifree-webdata-Qwen1.7B-train-test-base_temp0.7_topp0.9_maxlen256 \
     --critic_type rloo \
-    --gpus 8 \
+    --gpus 1 \
     --enable_prefix_caching \
     --collocate \
     --vllm_sleep \
@@ -17,7 +20,7 @@ python verifree.py \
     --non_stop_fixed_reward 0 \
     --oracle_type reward \
     --oracle math \
-    --pretrain Qwen/Qwen3-8B-Base \
+    --pretrain Qwen/Qwen3-1.7B \
     --prompt_template ours \
     --zero-stage 2 \
     --ref_offload \
@@ -31,9 +34,9 @@ python verifree.py \
     --sync_params_every 1 \
     --num_samples 8 \
     --max_step_adjustment 8 \
-    --temperature 1 \
-    --top_p 1 \
-    --generate_max_length 3000 \
+    --temperature 0.7 \
+    --top_p 0.9 \
+    --generate_max_length 256 \
     --save_steps 128 \
     --max_save_num 999 \
     --max_save_mem 99999999 \
